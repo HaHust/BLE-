@@ -1,0 +1,15 @@
+C:\Users\ZBook\source\repos\Bluetooth Serial Port\Bluetooth Serial Port\bin\Debug\Bluetooth Serial Port.exe.config
+C:\Users\ZBook\source\repos\Bluetooth Serial Port\Bluetooth Serial Port\bin\Debug\Bluetooth Serial Port.exe
+C:\Users\ZBook\source\repos\Bluetooth Serial Port\Bluetooth Serial Port\bin\Debug\Bluetooth Serial Port.pdb
+C:\Users\ZBook\source\repos\Bluetooth Serial Port\Bluetooth Serial Port\obj\Debug\Bluetooth Serial Port.csprojAssemblyReference.cache
+C:\Users\ZBook\source\repos\Bluetooth Serial Port\Bluetooth Serial Port\obj\Debug\Bluetooth_Serial_Port.Form1.resources
+C:\Users\ZBook\source\repos\Bluetooth Serial Port\Bluetooth Serial Port\obj\Debug\Bluetooth_Serial_Port.Properties.Resources.resources
+C:\Users\ZBook\source\repos\Bluetooth Serial Port\Bluetooth Serial Port\obj\Debug\Bluetooth Serial Port.csproj.GenerateResource.cache
+C:\Users\ZBook\source\repos\Bluetooth Serial Port\Bluetooth Serial Port\obj\Debug\Bluetooth Serial Port.csproj.CoreCompileInputs.cache
+C:\Users\ZBook\source\repos\Bluetooth Serial Port\Bluetooth Serial Port\obj\Debug\Bluetooth Serial Port.exe
+C:\Users\ZBook\source\repos\Bluetooth Serial Port\Bluetooth Serial Port\obj\Debug\Bluetooth Serial Port.pdb
+C:\Users\ZBook\source\repos\Bluetooth Serial Port\Bluetooth Serial Port\obj\Debug\Interop.Office.dll
+C:\Users\ZBook\source\repos\Bluetooth Serial Port\Bluetooth Serial Port\obj\Debug\Bluetooth Serial Port.csproj.ResolveComReference.cache
+C:\Users\ZBook\source\repos\Bluetooth Serial Port\Bluetooth Serial Port\bin\Debug\EPPlus.dll
+C:\Users\ZBook\source\repos\Bluetooth Serial Port\Bluetooth Serial Port\bin\Debug\EPPlus.xml
+C:\Users\ZBook\source\repos\Bluetooth Serial Port\Bluetooth Serial Port\obj\Debug\Bluetooth Serial Port.csproj.CopyComplete

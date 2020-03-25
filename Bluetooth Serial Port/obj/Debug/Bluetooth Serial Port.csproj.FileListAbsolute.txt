@@ -13,3 +13,10 @@ C:\Users\ZBook\source\repos\Bluetooth Serial Port\Bluetooth Serial Port\obj\Debu
 C:\Users\ZBook\source\repos\Bluetooth Serial Port\Bluetooth Serial Port\bin\Debug\EPPlus.dll
 C:\Users\ZBook\source\repos\Bluetooth Serial Port\Bluetooth Serial Port\bin\Debug\EPPlus.xml
 C:\Users\ZBook\source\repos\Bluetooth Serial Port\Bluetooth Serial Port\obj\Debug\Bluetooth Serial Port.csproj.CopyComplete
+C:\Users\ZBook\source\repos\Bluetooth Serial Port\Bluetooth Serial Port\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\ZBook\source\repos\Bluetooth Serial Port\Bluetooth Serial Port\bin\Debug\ExcelDataReader.DataSet.dll
+C:\Users\ZBook\source\repos\Bluetooth Serial Port\Bluetooth Serial Port\bin\Debug\ExcelDataReader.dll
+C:\Users\ZBook\source\repos\Bluetooth Serial Port\Bluetooth Serial Port\bin\Debug\ExcelDataReader.pdb
+C:\Users\ZBook\source\repos\Bluetooth Serial Port\Bluetooth Serial Port\bin\Debug\ExcelDataReader.xml
+C:\Users\ZBook\source\repos\Bluetooth Serial Port\Bluetooth Serial Port\bin\Debug\ExcelDataReader.DataSet.pdb
+C:\Users\ZBook\source\repos\Bluetooth Serial Port\Bluetooth Serial Port\bin\Debug\ExcelDataReader.DataSet.xml

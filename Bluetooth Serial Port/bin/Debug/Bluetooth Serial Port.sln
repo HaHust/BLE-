@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.489
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{911E67C6-3D85-4FCE-B560-20A9C3E3FF48}") = "Bluetooth Serial Port", "Bluetooth Serial Port.exe", "{97EBC59B-D6BD-4FB6-A2FC-74747CF87B37}"
+	ProjectSection(DebuggerProjectSystem) = preProject
+		PortSupplier = 00000000-0000-0000-0000-000000000000
+		Executable = C:\Users\ZBook\source\repos\Bluetooth Serial Port\Bluetooth Serial Port\bin\Debug\Bluetooth Serial Port.exe
+		RemoteMachine = DESKTOP-VU4AV94
+		StartingDirectory = C:\Users\ZBook\source\repos\Bluetooth Serial Port\Bluetooth Serial Port\bin\Debug
+		Environment = Default
+		LaunchingEngine = 00000000-0000-0000-0000-000000000000
+		UseLegacyDebugEngines = No
+		LaunchSQLEngine = No
+		AttachLaunchAction = No
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{97EBC59B-D6BD-4FB6-A2FC-74747CF87B37}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {74536254-DAF4-479C-995E-FC7EEBFAA852}
+	EndGlobalSection
+EndGlobal

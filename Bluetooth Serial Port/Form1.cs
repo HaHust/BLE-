@@ -14,6 +14,9 @@ using Microsoft.Office.Interop.Excel;
 using Excel = Microsoft.Office.Interop.Excel;
 using OfficeOpenXml;
 using System.IO;
+using ExcelDataReader;
+
+
 
 
 namespace Bluetooth_Serial_Port
@@ -22,16 +25,16 @@ namespace Bluetooth_Serial_Port
     {
         string InputData = String.Empty;
         delegate void SetTextCallback(string text);
-        Excel.Application xlApp = new Excel.Application();
-        
-        
-        
+        DataSet result;
+
+
         public Form1()
         {
             InitializeComponent();
+            ToolTip tip = new ToolTip();
             serialPort1.DataReceived += new SerialDataReceivedEventHandler(DataReceive);
         }
-        
+
         public class Devices
         {
             public string COM { get; set; }
@@ -40,13 +43,14 @@ namespace Bluetooth_Serial_Port
         public string PORT;
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
             try
             {
                 serialPort1.PortName = PORT;
                 serialPort1.BaudRate = 9600;
                 serialPort1.Open();
                 progressBar1.Value = 100;
+                MessageBox.Show("Đã Kết nối","Trạng thái");
             }
             catch (Exception err)
             {
@@ -58,7 +62,7 @@ namespace Bluetooth_Serial_Port
         public List<Devices> items = new List<Devices>();
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            items.Clear();
             using (var searcher = new ManagementObjectSearcher("SELECT * FROM Win32_PnPEntity WHERE Caption like '%(COM%'"))
             {
                 var portnames = SerialPort.GetPortNames();
@@ -75,7 +79,9 @@ namespace Bluetooth_Serial_Port
                 }
                 comboBox1.DataSource = items;
                 comboBox1.DisplayMember = "NAME";
+
             }
+            label2.Text = DateTime.Now.ToLongDateString();
         }
 
         private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
@@ -92,8 +98,8 @@ namespace Bluetooth_Serial_Port
             String InputData = serialPort1.ReadLine();
             if (InputData != String.Empty)
             {
-                
-                SetText(InputData);  
+
+                SetText(InputData);
             }
         }
         private void SetText(string text)
@@ -111,13 +117,88 @@ namespace Bluetooth_Serial_Port
 
             using (ExcelPackage excel = new ExcelPackage())
             {
-                excel.Workbook.Worksheets.Add("Worksheet1");
-                excel.Workbook.Worksheets.Add("Worksheet2");
-                excel.Workbook.Worksheets.Add("Worksheet3");
+                excel.Workbook.Worksheets.Add("Dữ Liệu");
 
-                FileInfo excelFile = new FileInfo(@"D:\test222.xlsx");
+                FileInfo excelFile = new FileInfo(@"test222.xlsx");
                 excel.SaveAs(excelFile);
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            DialogResult h = MessageBox.Show
+                ("Bạn có chắc muốn thoát không?", "Thoát", MessageBoxButtons.OKCancel);
+            if (h == DialogResult.OK)
+                System.Windows.Forms.Application.Exit();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            serialPort1.Close();
+            progressBar1.Value = 0;
+            comboBox1.DataSource = null;
+            items.Clear();
+            using (var searcher = new ManagementObjectSearcher("SELECT * FROM Win32_PnPEntity WHERE Caption like '%(COM%'"))
+            {
+                var portnames = SerialPort.GetPortNames();
+                var portList = searcher.Get().Cast<ManagementBaseObject>().ToList().Select(p => p["Caption"].ToString());
+                foreach (string s in portList)
+                {
+                    foreach (string j in portnames)
+                    {
+                        if (s.Contains(j))
+                        {
+                            items.Add(new Devices { NAME = s, COM = j });
+                        }
+                    }
+                }
+                comboBox1.DataSource = items;
+                comboBox1.DisplayMember = "NAME";
+            }
+            //MessageBox.Show("Đã ngắt kết nối", "Trạng thái");
+        }
+        DataTableCollection tableCollection;
+        System.Data.DataTable dt;
+        private void button5_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog() { Filter = "Excel 97-2003 Workbook|*.xls|Excel Workbook|*.xlsx" })
+            {
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string txtFilename = openFileDialog.FileName;
+                    using (var stream = File.Open(openFileDialog.FileName, FileMode.Open, FileAccess.Read))
+                    {
+                        using (IExcelDataReader reader = ExcelReaderFactory.CreateReader(stream))
+                        {
+                            DataSet result = reader.AsDataSet(new ExcelDataSetConfiguration()
+                            {
+                                ConfigureDataTable = (_) => new ExcelDataTableConfiguration() { UseHeaderRow = true }
+                            });
+                            tableCollection = result.Tables;
+                            System.Data.DataTable dt = tableCollection[0];
+                            dataGridView.DataSource = dt;
+                        }
+                    }
+                }
+            }
+        }
+
+        private void aboutUsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult h = MessageBox.Show
+                ("Bạn có chắc muốn thoát không?", "Thoát", MessageBoxButtons.OKCancel);
+            if (h == DialogResult.OK)
+                System.Windows.Forms.Application.Exit();
+        }
+
+        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Công ty ......", "Thông tin công ty");
+        }
+
+        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
